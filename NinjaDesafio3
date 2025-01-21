@@ -1,0 +1,16 @@
+package Desafio3NivelIntermediario;
+
+public class NinjaDesafio3 {
+
+    String nome;
+    String missao;
+    String nivelDiculdade;
+    String statusMissao ;
+
+    public void mostrarInformacoes(){
+        System.out.println(" O seu nome é....: " + nome +
+                           "\n E a sua missão é .....: " + missao +
+                           "\n O seu nivel de dificuldade é...: " +nivelDiculdade+
+                           "\n Esse é o Status da sua Missão..: " +statusMissao);
+    }
+}
