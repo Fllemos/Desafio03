@@ -1,0 +1,9 @@
+package Desafio3NivelIntermediario;
+
+public class UchihaDesafio03 extends NinjaDesafio3{
+    String habilidadeEspecial;
+
+    public void mostrarHabilidadeEspecial() {
+        System.out.println(" Essa aqui é a minha Habilidade Especial...:" + habilidadeEspecial );
+    }
+}
