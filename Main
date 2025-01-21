@@ -1,0 +1,79 @@
+package Desafio3NivelIntermediario;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner caixaDetexto = new Scanner(System.in); // Um único Scanner para todo o programa
+        String[] Cadastro = new String[5];
+        System.out.println("\n===== Menu Ninja =====");
+
+        // Objeto 1
+        NinjaDesafio3   Objeto01 = new NinjaDesafio3();
+
+        // Objeto 2
+        UchihaDesafio03 Objeto02 = new UchihaDesafio03();
+
+        while (true) {
+            // Exibe o menu
+            System.out.println("1. Cadastrar informações dos Ninjas");
+            System.out.println("2. Exibir informações de todos os Ninjas");
+            System.out.println("3. Atualizar as habilidades especiais");
+            System.out.println("4. Sair");
+            System.out.print("Escolha uma opção: ");
+            int opcaomenu = caixaDetexto.nextInt();
+            caixaDetexto.nextLine(); // Limpa o buffer do Scanner
+
+        switch (opcaomenu) {
+            case 1: // Cadastrar Ninjas
+                    System.out.print("Informe o nome do ninja ");
+                    Cadastro[0] = caixaDetexto.nextLine();
+                    System.out.print("Informe a missao do ninja ");
+                    Cadastro[1] = caixaDetexto.nextLine();
+                    System.out.print("Informe o nivel de Difilcudade do ninja ");
+                    Cadastro[2] = caixaDetexto.nextLine();
+                    System.out.print("Informe o status da Missao do ninja ");
+                    Cadastro[3] = caixaDetexto.nextLine();
+                    System.out.print("Informe a Habilidade Especial");
+                    Cadastro[4] = caixaDetexto.nextLine();
+                    System.out.println();
+            break;
+
+            case 2: // Listar Ninjas
+                if (Cadastro[0] == null ) {
+                    System.out.println("Nenhum ninja cadastrado.");
+                } else {
+                    System.out.println("Ninjas cadastrados:");
+                        Objeto01.nome                 = Cadastro[0];
+                        Objeto01.missao               = Cadastro[1];
+                        Objeto01.nivelDiculdade       = Cadastro[2];
+                        Objeto01.statusMissao         = Cadastro[3];
+                        Objeto02.habilidadeEspecial   = Cadastro[4];
+                        Objeto01.mostrarInformacoes();
+                        Objeto02.mostrarHabilidadeEspecial();
+                        System.out.println();
+                    }
+                break;
+
+            case 3:
+                    System.out.print("Informe a nova habilidade especial ");
+                    String nova = caixaDetexto.nextLine();
+                    Cadastro[4] = nova;
+                    Objeto02.habilidadeEspecial = Cadastro[4];
+                    Objeto02.mostrarHabilidadeEspecial();
+            break;
+
+            case 4: // Sair
+                System.out.println("Saindo da aplicação...");
+                caixaDetexto.close();
+                return; // Encerra o programa
+
+
+
+            default: // Opção inválida
+                    System.out.println("Opção inválida! Tente novamente.");
+        } }
+    }
+}
+
